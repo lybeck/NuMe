@@ -22,7 +22,9 @@
         <itemPath>src/w1/w1e2.cpp</itemPath>
         <itemPath>src/w1/w1e3.cpp</itemPath>
         <itemPath>src/w1/w1e5.cpp</itemPath>
+        <itemPath>src/w1/w1e6.cpp</itemPath>
       </logicalFolder>
+      <itemPath>src/eps.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -50,6 +52,8 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="src/eps.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/test/gsltest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/test/lam.cpp" ex="false" tool="1" flavor2="0">
@@ -63,6 +67,8 @@
       <item path="src/w1/w1e3.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w1/w1e5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/w1/w1e6.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -85,6 +91,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="src/eps.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/test/gsltest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/test/lam.cpp" ex="false" tool="1" flavor2="0">
@@ -98,6 +106,8 @@
       <item path="src/w1/w1e3.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w1/w1e5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/w1/w1e6.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

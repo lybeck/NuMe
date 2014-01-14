@@ -35,13 +35,15 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/eps.o \
 	${OBJECTDIR}/src/test/gsltest.o \
 	${OBJECTDIR}/src/test/lam.o \
 	${OBJECTDIR}/src/test/vectest.o \
 	${OBJECTDIR}/src/w1/w1e1.o \
 	${OBJECTDIR}/src/w1/w1e2.o \
 	${OBJECTDIR}/src/w1/w1e3.o \
-	${OBJECTDIR}/src/w1/w1e5.o
+	${OBJECTDIR}/src/w1/w1e5.o \
+	${OBJECTDIR}/src/w1/w1e6.o
 
 
 # C Compiler Flags
@@ -67,6 +69,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nume: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nume ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/src/eps.o: src/eps.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/eps.o src/eps.cpp
 
 ${OBJECTDIR}/src/test/gsltest.o: src/test/gsltest.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/test
@@ -102,6 +109,11 @@ ${OBJECTDIR}/src/w1/w1e5.o: src/w1/w1e5.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/w1
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w1/w1e5.o src/w1/w1e5.cpp
+
+${OBJECTDIR}/src/w1/w1e6.o: src/w1/w1e6.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w1
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w1/w1e6.o src/w1/w1e6.cpp
 
 # Subprojects
 .build-subprojects:

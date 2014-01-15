@@ -1,8 +1,6 @@
 /* 
  * File:   w1e3.cpp
  * Author: Lasse Lybeck
- *
- * Created on January 8, 2014, 11:51 AM
  */
 
 #include <iostream>
@@ -14,10 +12,7 @@
 
 using namespace std;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+int main() {
     ifstream fin("h013.dat");
     vector<double> x, y;
     double tmp;

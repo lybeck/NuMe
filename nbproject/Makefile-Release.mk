@@ -36,12 +36,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/eps.o \
-	${OBJECTDIR}/src/test/gsltest.o \
-	${OBJECTDIR}/src/test/lam.o \
-	${OBJECTDIR}/src/test/vectest.o \
 	${OBJECTDIR}/src/w1/w1e1.o \
 	${OBJECTDIR}/src/w1/w1e2.o \
 	${OBJECTDIR}/src/w1/w1e3.o \
+	${OBJECTDIR}/src/w1/w1e4.o \
 	${OBJECTDIR}/src/w1/w1e5.o \
 	${OBJECTDIR}/src/w1/w1e6.o
 
@@ -75,21 +73,6 @@ ${OBJECTDIR}/src/eps.o: src/eps.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/eps.o src/eps.cpp
 
-${OBJECTDIR}/src/test/gsltest.o: src/test/gsltest.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/test
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test/gsltest.o src/test/gsltest.cpp
-
-${OBJECTDIR}/src/test/lam.o: src/test/lam.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/test
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test/lam.o src/test/lam.cpp
-
-${OBJECTDIR}/src/test/vectest.o: src/test/vectest.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/test
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test/vectest.o src/test/vectest.cpp
-
 ${OBJECTDIR}/src/w1/w1e1.o: src/w1/w1e1.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/w1
 	${RM} "$@.d"
@@ -104,6 +87,11 @@ ${OBJECTDIR}/src/w1/w1e3.o: src/w1/w1e3.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/w1
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w1/w1e3.o src/w1/w1e3.cpp
+
+${OBJECTDIR}/src/w1/w1e4.o: src/w1/w1e4.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w1
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w1/w1e4.o src/w1/w1e4.cpp
 
 ${OBJECTDIR}/src/w1/w1e5.o: src/w1/w1e5.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/w1

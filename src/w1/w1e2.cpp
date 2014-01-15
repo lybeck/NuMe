@@ -1,8 +1,6 @@
 /* 
  * File:   w1e2.cpp
  * Author: Lasse Lybeck
- *
- * Created on January 7, 2014, 7:06 PM
  */
 
 #include <cstdlib>
@@ -15,10 +13,7 @@ double wind_chill(double T, double V) {
     return .045 * (5.27 * sqrt(V) + 10.45 - .28 * V) * (T - 33) + 33;
 }
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+int main() {
     for (int w = 0; w <= 4; w++) {
         int wind = 2 * w;
         printf("%13d", wind);

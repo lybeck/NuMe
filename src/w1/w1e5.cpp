@@ -1,8 +1,6 @@
 /* 
  * File:   w1e5.cpp
  * Author: Lasse Lybeck
- *
- * Created on January 4, 2014, 3:07 PM
  */
 
 #include <cstdlib>
@@ -30,10 +28,7 @@ double fixed_point_iteration(double (*f)(double)) {
     return x;
 }
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+int main() {
 
     double a = fixed_point_iteration(&cos);
     double b = fixed_point_iteration([] (double x) {return exp(-x);});

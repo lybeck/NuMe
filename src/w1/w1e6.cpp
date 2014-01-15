@@ -1,8 +1,6 @@
 /* 
  * File:   w1e6.cpp
  * Author: Lasse Lybeck
- *
- * Created on January 13, 2014, 3:03 PM
  */
 
 #include <cstdlib>
@@ -35,10 +33,7 @@ double gauss(double r) {
     return 1 / ag(1, sqrt(1 - pow(r, 2)));
 }
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+int main() {
     
     double lib, form;
     

@@ -1,8 +1,6 @@
 /* 
  * File:   w1e1.cpp
  * Author: Lasse Lybeck
- *
- * Created on January 4, 2014, 2:36 PM
  */
 
 #include <string>

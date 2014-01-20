@@ -46,11 +46,11 @@ OBJECTFILES= \
 
 
 # C Compiler Flags
-CFLAGS=
+CFLAGS=-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas
+CXXFLAGS=-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas
 
 # Fortran Compiler Flags
 FFLAGS=

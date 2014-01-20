@@ -5,3 +5,7 @@ src/*/a
 # libraries from the nume server
 lib/
 
+# temp files for plotting
+*.tmp
+*.cmd
+*mnmx.dat

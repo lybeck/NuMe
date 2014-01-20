@@ -5,6 +5,7 @@
 
 #include <cstdlib>
 #include <cmath>
+#include <cstdio>
 #include <iostream>
 
 using namespace std;
@@ -16,13 +17,13 @@ double wind_chill(double T, double V) {
 int main() {
     for (int w = 0; w <= 4; w++) {
         int wind = 2 * w;
-        printf("%13d", wind);
+        printf("%10d", wind);
         for (int t = 0; t <= 4; t++) {
             int temp = 10 - 5 * t;
             if (w == 0)
-                printf("%13d", temp);
+                printf("%10d", temp);
             else
-                printf("%13f", wind_chill(temp, wind * 3.6));
+                printf("%10d", (int) wind_chill(temp, wind * 3.6));
         }
         cout << endl;
     }

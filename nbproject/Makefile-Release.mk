@@ -41,7 +41,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/w1/w1e3.o \
 	${OBJECTDIR}/src/w1/w1e4.o \
 	${OBJECTDIR}/src/w1/w1e5.o \
-	${OBJECTDIR}/src/w1/w1e6.o
+	${OBJECTDIR}/src/w1/w1e6.o \
+	${OBJECTDIR}/src/w2/w2e1.o
 
 
 # C Compiler Flags
@@ -102,6 +103,11 @@ ${OBJECTDIR}/src/w1/w1e6.o: src/w1/w1e6.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/w1
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w1/w1e6.o src/w1/w1e6.cpp
+
+${OBJECTDIR}/src/w2/w2e1.o: src/w2/w2e1.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w2
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e1.o src/w2/w2e1.cpp
 
 # Subprojects
 .build-subprojects:

@@ -13,8 +13,8 @@ const double max_iter = 50;
 
 using namespace std;
 
-double fixed_point_iteration(double (*f)(double)) {
-    double x = 0;
+double fixed_point_iteration(double (*f)(double), double x0) {
+    double x = x0;
     double oldx;
     for (int i = 1; i <= max_iter; i++) {
         oldx = x;
@@ -30,9 +30,9 @@ double fixed_point_iteration(double (*f)(double)) {
 
 int main() {
 
-    double a = fixed_point_iteration(&cos);
-    double b = fixed_point_iteration([] (double x) {return exp(-x);});
-    double c = fixed_point_iteration([] (double x) {return 1 - cosh(x);});
+    double a = fixed_point_iteration(&cos, 0);
+    double b = fixed_point_iteration([] (double x) {return exp(-x);}, 0);
+    double c = fixed_point_iteration([] (double x) {return 1 - cosh(x);}, 0);
 
     cout << "a = " << a << endl;
     cout << "b = " << b << endl;

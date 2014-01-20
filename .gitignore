@@ -1,4 +1,5 @@
-# ignore compiled files
+# compiled files
 *.out
 
-
+# libraries from the nume server
+lib/

@@ -57,25 +57,21 @@ int main() {
     A = getmat("e2/A.dat");
     y = getmat("e2/b.dat");
 
-    // A' = tranpose of A
-    Mat_DP At(2, 4);
-    transp(A, At);
+    // At= tranpose of A
+    Mat_DP At = !A;
 
-    // A' * A
-    Mat_DP AtA(2, 2);
-    matmul(At, A, AtA);
+    // At * A
+    Mat_DP AtA = At * A;
 
-    // inv(A' * A)
+    // inv(At * A)
     Mat_DP invAtA(2, 2);
     invmat(AtA, invAtA);
 
-    // inv(A' * A) * A'
-    Mat_DP invtimesAt(2, 4);
-    matmul(invAtA, At, invtimesAt);
+    // inv(At * A) * A'
+    Mat_DP invtimesAt = invAtA * At;
 
-    // x = inv(A' * A) * A' * y
-    Mat_DP x(2, 1);
-    matmul(invtimesAt, y, x);
+    // x = inv(At * A) * A' * y
+    Mat_DP x = invtimesAt * y;
     
     double a = x[0][0];
     double b = x[1][0];

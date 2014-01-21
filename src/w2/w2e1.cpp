@@ -6,20 +6,12 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <random>
 #include <cmath>
+#include "matutl02.h"
 
 using namespace std;
 
 const double monte_carlo_points = 1e6;
-
-double rand_double() {
-    return (double) rand() / RAND_MAX;
-}
-
-double rand_double(double min, double max) {
-    return (max - min) * rand_double() + min;
-}
 
 bool is_between(double x, double y1, double y2) {
     return (x > y1 && x < y2) || (x < y1 && x > y2);
@@ -29,8 +21,8 @@ double monte_carlo_between_curves(double (*f) (double), double (*g) (double), do
     int hits = 0;
     double x, y, fx, gx;
     for (int i = 0; i < monte_carlo_points; i++) {
-        x = rand_double(xmin, xmax);
-        y = rand_double(xmin, xmax);
+        x = rdm(xmin, xmax);
+        y = rdm(ymin, ymax);
         fx = f(x);
         gx = g(x);
         if (is_between(y, fx, gx)) {
@@ -47,7 +39,7 @@ double monte_carlo_between_curves(double (*f) (double), double (*g) (double), do
 int main() {
 
     // seed the random
-    srand(time(0));
+    init_srand();
 
     double d = monte_carlo_between_curves(&sin, &cos, 0, 2 * M_PI, -1, 1);
     

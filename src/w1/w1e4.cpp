@@ -9,7 +9,6 @@
 #include <cmath>
 #include <fstream>
 #include <sstream>
-#include <functional>
 #include <vector>
 #include <gsl/gsl_fit.h>
 #include "plot.h"
@@ -67,7 +66,7 @@ void linear_fit_gsl(const vector<double> x, const vector<double> y, double* a, d
     gsl_fit_linear(&x[0], 1, &y[0], 1, n, b, a, &cov00, &cov01, &cov11, &chisq);
 }
 
-void plot_line(vector<double> x, vector<double> y, double a, double b) {
+void plot_line(const vector<double> x, const vector<double> y, double a, double b) {
     const char* filename1 = "data1.tmp";
     const char* filename2 = "data2.tmp";
     ofstream file1(filename1);

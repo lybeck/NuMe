@@ -42,15 +42,16 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/w1/w1e4.o \
 	${OBJECTDIR}/src/w1/w1e5.o \
 	${OBJECTDIR}/src/w1/w1e6.o \
-	${OBJECTDIR}/src/w2/w2e1.o
+	${OBJECTDIR}/src/w2/w2e1.o \
+	${OBJECTDIR}/src/w2/w2e2.o
 
 
 # C Compiler Flags
-CFLAGS=-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas
+CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas
-CXXFLAGS=-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas
+CCFLAGS=
+CXXFLAGS=
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -108,6 +109,11 @@ ${OBJECTDIR}/src/w2/w2e1.o: src/w2/w2e1.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/w2
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e1.o src/w2/w2e1.cpp
+
+${OBJECTDIR}/src/w2/w2e2.o: src/w2/w2e2.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w2
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e2.o src/w2/w2e2.cpp
 
 # Subprojects
 .build-subprojects:

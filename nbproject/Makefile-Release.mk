@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/eps.o \
+	${OBJECTDIR}/src/myutil/eps.o \
 	${OBJECTDIR}/src/w1/w1e1.o \
 	${OBJECTDIR}/src/w1/w1e2.o \
 	${OBJECTDIR}/src/w1/w1e3.o \
@@ -44,7 +44,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/w1/w1e6.o \
 	${OBJECTDIR}/src/w2/w2e1-plot.o \
 	${OBJECTDIR}/src/w2/w2e1.o \
-	${OBJECTDIR}/src/w2/w2e2.o
+	${OBJECTDIR}/src/w2/w2e2.o \
+	${OBJECTDIR}/src/w2/w2e3.o
 
 
 # C Compiler Flags
@@ -71,10 +72,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nume: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nume ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/src/eps.o: src/eps.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
+${OBJECTDIR}/src/myutil/eps.o: src/myutil/eps.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/myutil
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/eps.o src/eps.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/myutil/eps.o src/myutil/eps.cpp
 
 ${OBJECTDIR}/src/w1/w1e1.o: src/w1/w1e1.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/w1
@@ -120,6 +121,11 @@ ${OBJECTDIR}/src/w2/w2e2.o: src/w2/w2e2.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/w2
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e2.o src/w2/w2e2.cpp
+
+${OBJECTDIR}/src/w2/w2e3.o: src/w2/w2e3.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w2
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e3.o src/w2/w2e3.cpp
 
 # Subprojects
 .build-subprojects:

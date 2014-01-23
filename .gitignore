@@ -1,5 +1,6 @@
 # compiled files
 *.out
+*.o
 src/*/a
 
 # libraries from the nume server

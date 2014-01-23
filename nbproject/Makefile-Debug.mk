@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/eps.o \
+	${OBJECTDIR}/src/myutil/eps.o \
 	${OBJECTDIR}/src/w1/w1e1.o \
 	${OBJECTDIR}/src/w1/w1e2.o \
 	${OBJECTDIR}/src/w1/w1e3.o \
@@ -44,15 +44,16 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/w1/w1e6.o \
 	${OBJECTDIR}/src/w2/w2e1-plot.o \
 	${OBJECTDIR}/src/w2/w2e1.o \
-	${OBJECTDIR}/src/w2/w2e2.o
+	${OBJECTDIR}/src/w2/w2e2.o \
+	${OBJECTDIR}/src/w2/w2e3.o
 
 
 # C Compiler Flags
-CFLAGS=-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas
+CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas
-CXXFLAGS=-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas
+CCFLAGS=
+CXXFLAGS=
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -71,10 +72,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nume: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nume ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/src/eps.o: src/eps.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
+${OBJECTDIR}/src/myutil/eps.o: src/myutil/eps.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/myutil
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/eps.o src/eps.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/myutil/eps.o src/myutil/eps.cpp
 
 ${OBJECTDIR}/src/w1/w1e1.o: src/w1/w1e1.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/w1
@@ -120,6 +121,11 @@ ${OBJECTDIR}/src/w2/w2e2.o: src/w2/w2e2.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/w2
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e2.o src/w2/w2e2.cpp
+
+${OBJECTDIR}/src/w2/w2e3.o: src/w2/w2e3.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w2
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e3.o src/w2/w2e3.cpp
 
 # Subprojects
 .build-subprojects:

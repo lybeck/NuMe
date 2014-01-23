@@ -35,7 +35,7 @@ void plot_line(const vector<double> x, const vector<double> y, double a, double 
     plot(filename1, "rx", filename2, "b-", NULL);
 }
 
-void plot_result(const Mat_DP& A, const Mat_DP& y, double a, double b) {
+void plot_result(Mat_DP const& A, Mat_DP const& y, double a, double b) {
     
     vector<double> xdata(4);
     vector<double> ydata(4);

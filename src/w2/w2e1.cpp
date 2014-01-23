@@ -5,7 +5,6 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <ctime>
 #include <cmath>
 #include "matutl02.h"
 
@@ -43,6 +42,7 @@ int main() {
 
     double d = monte_carlo_between_curves(&sin, &cos, 0, 2 * M_PI, -1, 1);
     
+    cout.precision(10);
     cout << "d = " << d << endl;
 }
 

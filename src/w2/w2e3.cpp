@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 #include "nr.h"
 #include "matutl02.h"
 #include "eps.h"
@@ -17,7 +18,7 @@ const double maxValue = 1e3;
 bool is_zero_matrix(Mat_DP const& a, double tolerance) {
     for (int i = 0; i < a.nrows(); i++) {
         for (int j = 0; j < a.ncols(); j++) {
-            if(a[i][j] > tolerance)
+            if(abs(a[i][j]) > tolerance)
                 return false;
         }
     }
@@ -74,7 +75,8 @@ bool test_mat_inverse(int p, int r, double tolerance) {
 }
 
 void run_test(int minn, int maxn, int times, double tolerance) {
-    int tests = times * maxn * maxn;
+    int totaln = (maxn - minn + 1);
+    int tests = times * totaln * totaln;
     int fails = 0;
     for (int p = minn; p <= maxn; p++) {
         for (int r = minn; r <= maxn; r++) {

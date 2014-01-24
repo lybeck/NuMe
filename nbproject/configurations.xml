@@ -30,6 +30,7 @@
         <itemPath>src/w2/w2e2.cpp</itemPath>
         <itemPath>src/w2/w2e3.cpp</itemPath>
         <itemPath>src/w2/w2e4.cpp</itemPath>
+        <itemPath>src/w2/w2e5.cpp</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -59,6 +60,13 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <cTool>
+          <commandLine>-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas</commandLine>
+        </cTool>
+        <ccTool>
+          <commandlineTool>g++</commandlineTool>
+          <commandLine>-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas</commandLine>
+        </ccTool>
       </compileType>
       <item path="src/myutil/eps.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -85,6 +93,8 @@
       <item path="src/w2/w2e3.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w2/w2e4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/w2/w2e5.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -132,6 +142,8 @@
       <item path="src/w2/w2e3.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w2/w2e4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/w2/w2e5.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

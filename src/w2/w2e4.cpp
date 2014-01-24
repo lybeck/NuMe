@@ -37,23 +37,88 @@ void zero_under_diag(Mat_DP& a) {
     }
 }
 
+void random_upper_triangular(Mat_DP& a) {
+
+    // could be done like this, but we do it more efficiently
+    //    ranmat2(a, minValue, maxValue);
+    //    zero_under_diag(a);
+
+    for (int i = 0; i < a.nrows(); i++) {
+        for (int j = 0; j < a.ncols(); j++) {
+            if (i <= j)
+                a[i][j] = rdm(minValue, maxValue);
+            else
+                a[i][j] = 0;
+        }
+    }
+}
+
 bool is_inverse_upper_triangular(int n, double tolerance) {
     Mat_DP a(n, n);
-    ranmat2(a, minValue, maxValue);
-    zero_under_diag(a);
+    random_upper_triangular(a);
     Mat_DP ainv(n, n);
     invmat(a, ainv);
-    //    cout << "a = " << endl << a << endl;
-    //    cout << "ainv = " << endl << ainv << endl;
     return is_upper_triangular(ainv, tolerance);
 }
 
 void test_upper_triangular(int minn, int maxn, int tests, double tolerance) {
+
+    cout << endl;
+    cout << "Starting test for upper triangular matrices." << endl;
+
     int totalTests = (maxn - minn + 1) * tests;
     int fails = 0;
     for (int n = minn; n <= maxn; n++) {
         for (int i = 0; i < tests; i++) {
             if (!is_inverse_upper_triangular(n, tolerance))
+                ++fails;
+        }
+    }
+
+    cout << "totalTests = " << totalTests << endl;
+    cout << "fails = " << fails << endl;
+    cout << "ratio = " << (double) 100 * fails / totalTests << " %" << endl;
+}
+
+void random_tridiagonal(Mat_DP& a) {
+    for (int i = 0; i < a.nrows(); i++) {
+        for (int j = 0; j < a.ncols(); j++) {
+            if (abs(i - j) <= 1)
+                a[i][j] = rdm(minValue, maxValue);
+            else
+                a[i][j] = 0;
+        }
+    }
+}
+
+bool is_tridiagonal(Mat_DP& a, double tolerance) {
+    for (int i = 0; i < a.nrows(); i++) {
+        for (int j = 0; j < a.ncols(); j++) {
+            if (abs(i - j) > 1 && abs(a[i][j]) > tolerance)
+                return false;
+        }
+    }
+    return true;
+}
+
+bool is_inverse_tridiagonal(int n, double tolerance) {
+    Mat_DP a(n, n);
+    random_tridiagonal(a);
+    Mat_DP ainv(n, n);
+    invmat(a, ainv);
+    return is_tridiagonal(ainv, tolerance);
+}
+
+void test_tridiagonal(int minn, int maxn, int tests, double tolerance) {
+
+    cout << endl;
+    cout << "Starting test for tridiagonal matrices." << endl;
+
+    int totalTests = (maxn - minn + 1) * tests;
+    int fails = 0;
+    for (int n = minn; n <= maxn; n++) {
+        for (int i = 0; i < tests; i++) {
+            if (!is_inverse_tridiagonal(n, tolerance))
                 ++fails;
         }
     }
@@ -73,9 +138,9 @@ int main() {
     int maxn = 30;
     int tests = 100;
 
-    cout << endl;
-    cout << "Starting test for upper triangular matrices." << endl;
     test_upper_triangular(minn, maxn, tests, eps);
+    
+    test_tridiagonal(minn, maxn, tests, eps);
 
     return 0;
 }

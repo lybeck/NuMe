@@ -2,6 +2,7 @@
 *.out
 *.o
 src/*/a
+build/
 
 # libraries from the nume server
 lib/

@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/myutil/eps.o \
+	${OBJECTDIR}/src/myutil/myplot.o \
 	${OBJECTDIR}/src/w1/w1e1.o \
 	${OBJECTDIR}/src/w1/w1e2.o \
 	${OBJECTDIR}/src/w1/w1e3.o \
@@ -78,6 +79,11 @@ ${OBJECTDIR}/src/myutil/eps.o: src/myutil/eps.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/myutil
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/myutil/eps.o src/myutil/eps.cpp
+
+${OBJECTDIR}/src/myutil/myplot.o: src/myutil/myplot.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/myutil
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/myutil/myplot.o src/myutil/myplot.cpp
 
 ${OBJECTDIR}/src/w1/w1e1.o: src/w1/w1e1.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/w1

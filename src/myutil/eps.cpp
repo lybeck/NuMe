@@ -16,10 +16,10 @@ double calculate_machine_epsilon() {
 }
 
 double get_machine_epsilon() {
-    static double eps = -1.0;
-    if (eps < 0.0)
-        eps = calculate_machine_epsilon();
-    return eps;
+    static double EPS = -1.0;
+    if (EPS < 0.0)
+        EPS = calculate_machine_epsilon();
+    return EPS;
 }
 
 double get_sqrt_machine_epsilon() {

@@ -65,7 +65,7 @@ int main() {
 
     double d = monte_carlo_between_curves(f1, f2, minx, maxx, -1, 1);
 
-    cout << "d = " << d << endl;
+    cout << "Area between curves = " << d << endl;
     
     ofstream f1_file(f1_filename);
     ofstream f2_file(f2_filename);

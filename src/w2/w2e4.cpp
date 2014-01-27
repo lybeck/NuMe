@@ -15,6 +15,8 @@ using namespace std;
 const double minValue = -1e3;
 const double maxValue = 1e3;
 
+typedef bool (*test_case) (int, double);
+
 bool is_upper_triangular(Mat_DP const& a, double tolerance) {
     int n = a.nrows();
     int m = a.ncols();
@@ -61,23 +63,12 @@ bool is_inverse_upper_triangular(int n, double tolerance) {
     return is_upper_triangular(ainv, tolerance);
 }
 
-void test_upper_triangular(int minn, int maxn, int tests, double tolerance) {
-
-    cout << endl;
-    cout << "Starting test for upper triangular matrices." << endl;
-
-    int totalTests = (maxn - minn + 1) * tests;
-    int fails = 0;
-    for (int n = minn; n <= maxn; n++) {
-        for (int i = 0; i < tests; i++) {
-            if (!is_inverse_upper_triangular(n, tolerance))
-                ++fails;
-        }
-    }
-
-    cout << "totalTests = " << totalTests << endl;
-    cout << "fails = " << fails << endl;
-    cout << "ratio = " << (double) 100 * fails / totalTests << " %" << endl;
+bool is_product_upper_triangular(int n, double tolerance) {
+    Mat_DP a(n, n), b(n, n);
+    random_upper_triangular(a);
+    random_upper_triangular(b);
+    Mat_DP c = a * b;
+    return is_upper_triangular(c, tolerance);
 }
 
 void random_tridiagonal(Mat_DP& a) {
@@ -109,16 +100,20 @@ bool is_inverse_tridiagonal(int n, double tolerance) {
     return is_tridiagonal(ainv, tolerance);
 }
 
-void test_tridiagonal(int minn, int maxn, int tests, double tolerance) {
+bool is_product_tridiagonal(int n, double tolerance) {
+    Mat_DP a(n, n), b(n, n);
+    random_tridiagonal(a);
+    random_tridiagonal(b);
+    Mat_DP c = a * b;
+    return is_tridiagonal(c, tolerance);
+}
 
-    cout << endl;
-    cout << "Starting test for tridiagonal matrices." << endl;
-
+void run_tests(test_case test, int minn, int maxn, int tests, double tolerance) {
     int totalTests = (maxn - minn + 1) * tests;
     int fails = 0;
     for (int n = minn; n <= maxn; n++) {
         for (int i = 0; i < tests; i++) {
-            if (!is_inverse_tridiagonal(n, tolerance))
+            if (!test(n, tolerance))
                 ++fails;
         }
     }
@@ -132,16 +127,26 @@ int main() {
 
     init_srand();
 
-    double eps = get_sqrt_machine_epsilon();
+    const double eps = get_sqrt_machine_epsilon();
 
-    int minn = 1;
+    int minn = 4;
     int maxn = 30;
     int tests = 100;
 
-    test_upper_triangular(minn, maxn, tests, eps);
-    
-    test_tridiagonal(minn, maxn, tests, eps);
+    cout << endl << "Starting tests for upper triangular inverse." << endl;
+    run_tests(&is_inverse_upper_triangular, minn, maxn, tests, eps);
 
+    cout << endl << "Starting tests for upper triangular product." << endl;
+    run_tests(&is_product_upper_triangular, minn, maxn, tests, eps);
+
+    cout << endl << "Starting tests for tridiagonal inverse." << endl;
+    run_tests(&is_inverse_tridiagonal, minn, maxn, tests, eps);
+
+    cout << endl << "Starting tests for tridiagonal product." << endl;
+    run_tests(&is_product_tridiagonal, minn, maxn, tests, eps);
+
+    cout << endl;
+    
     return 0;
 }
 

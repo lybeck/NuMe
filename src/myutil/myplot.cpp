@@ -102,7 +102,6 @@ namespace myplot {
     static void unpacksty(const char *style, char *ret);
 
     void plot(data_set data) {
-        std::cout << "myplot::plot() begin." << std::endl;
         
         if(data.empty()) {
             std::cerr << "Nothing to plot..." << std::endl;
@@ -123,7 +122,6 @@ namespace myplot {
             std::stringstream sstream;
             sstream << "data" << i << ".tmp";
             std::string filename = sstream.str();
-            std::cout << "filename = " << filename << std::endl;
             if (data[i].get_min_x() < min_x)
                 min_x = data[i].get_min_x();
             if (data[i].get_max_x() > max_x)
@@ -150,8 +148,6 @@ namespace myplot {
         mnmxfile.close();
         
         system("gnuplot plot.cmd");
-        
-        std::cout << "myplot::plot() end." << std::endl;
     }
 
     static void unpacksty(const char *style, char *ret) {

@@ -14,6 +14,7 @@
                 <sourceRootElem>src/test</sourceRootElem>
                 <sourceRootElem>src/w2</sourceRootElem>
                 <sourceRootElem>src/myutil</sourceRootElem>
+                <sourceRootElem>src/w3</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

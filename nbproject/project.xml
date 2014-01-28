@@ -10,11 +10,10 @@
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>src/w1</sourceRootElem>
-                <sourceRootElem>src/test</sourceRootElem>
-                <sourceRootElem>src/w2</sourceRootElem>
-                <sourceRootElem>src/myutil</sourceRootElem>
                 <sourceRootElem>src/w3</sourceRootElem>
+                <sourceRootElem>src/w2</sourceRootElem>
+                <sourceRootElem>src/w1</sourceRootElem>
+                <sourceRootElem>src/myutil</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

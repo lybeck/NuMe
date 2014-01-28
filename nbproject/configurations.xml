@@ -39,6 +39,7 @@
       <logicalFolder name="w3" displayName="w3" projectFiles="true">
         <itemPath>src/w3/w3e1.cpp</itemPath>
         <itemPath>src/w3/w3e2.cpp</itemPath>
+        <itemPath>src/w3/w3e3.cpp</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -54,11 +55,10 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>src/w1</Elem>
-    <Elem>src/test</Elem>
-    <Elem>src/w2</Elem>
-    <Elem>src/myutil</Elem>
     <Elem>src/w3</Elem>
+    <Elem>src/w2</Elem>
+    <Elem>src/w1</Elem>
+    <Elem>src/myutil</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -112,6 +112,8 @@
       <item path="src/w3/w3e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w3/w3e2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/w3/w3e3.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -169,6 +171,8 @@
       <item path="src/w3/w3e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w3/w3e2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/w3/w3e3.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

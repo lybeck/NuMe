@@ -49,7 +49,7 @@ void run_multiplication_tests(int minn, int maxn, int times) {
     int fails = 0;
     for (int i = minn; i <= maxn; i++) {
         Mat_DP a(i, i), b(i, i), prod(i, i);
-        for (int i = 0; i < times; i++) {
+        for (int j = 0; j < times; j++) {
             random_diagonally_dominant(a);
             random_diagonally_dominant(b);
             matmul(a, b, prod);
@@ -64,8 +64,30 @@ void run_multiplication_tests(int minn, int maxn, int times) {
     cout << "Ratio = " << 100.0 * fails / total_tests << " %" << endl << endl;
 }
 
+void run_inverse_tests(int minn, int maxn, int times) {
+    cout << endl << "Starting tests for the inverse of a diagonally dominant matrices." << endl;
+
+    int total_tests = (maxn - minn + 1) * times;
+    int fails = 0;
+    for (int i = minn; i <= maxn; i++) {
+        Mat_DP a(i, i), inva(i, i);
+        for (int j = 0; j < times; j++) {
+            random_diagonally_dominant(a);
+            invmat(a, inva);
+            if (!is_diagonally_dominant(inva))
+                ++fails;
+        }
+    }
+
+    cout << "Results:" << endl;
+    cout << "Total tests = " << total_tests << endl;
+    cout << "Fails = " << fails << endl;
+    cout << "Ratio = " << 100.0 * fails / total_tests << " %" << endl << endl;
+}
+
 void run_tests(int minn, int maxn, int times) {
     run_multiplication_tests(minn, maxn, times);
+    run_inverse_tests(minn, maxn, times);
 }
 
 int main() {

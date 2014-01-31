@@ -40,6 +40,7 @@
         <itemPath>src/w3/w3e1.cpp</itemPath>
         <itemPath>src/w3/w3e2.cpp</itemPath>
         <itemPath>src/w3/w3e3.cpp</itemPath>
+        <itemPath>src/w3/w3e4.cpp</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -115,6 +116,8 @@
       </item>
       <item path="src/w3/w3e3.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/w3/w3e4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -173,6 +176,8 @@
       <item path="src/w3/w3e2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w3/w3e3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/w3/w3e4.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

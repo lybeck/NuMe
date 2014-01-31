@@ -42,7 +42,7 @@ double trapz_poly_integral(poly_coeffs const& c, double a, double b, int n) {
     
     double h = (b - a) / n;
     double sum = 0;
-    for (int k = 0; k < n; k++) {
+    for (int k = 0; k <= n; k++) {
         // x_k = a + k * h
         sum += f(a + k * h);
     }
@@ -85,13 +85,13 @@ void run_comparison() {
 
     double analytic = analytic_poly_integral(c, a, b);
 
-    printf("Analytic integral = %-g\n\n", analytic);
-    printf("%-8s %-11s %-20s %-15s\n", "n", "I(a,b,n)", "|I(a,b,n) - I(a,b)|", "h*h");
+    printf("Analytic integral = %-.12g\n\n", analytic);
+    printf("%-8s %-14s %-20s %-15s\n", "n", "I(a,b,n)", "|I(a,b,n) - I(a,b)|", "h*h");
     for (int n = 10; n <= 1e6; n *= 10) {
         double numeric = trapz_poly_integral(c, a, b, n);
         double diff = abs(analytic - numeric);
         double h = (b - a) / n;
-        printf("%-8d %-11g %-20e %-15e\n", n, numeric, diff, h * h);
+        printf("%-8d %-14.10g %-20e %-15e\n", n, numeric, diff, h * h);
     }
     cout << endl;
 

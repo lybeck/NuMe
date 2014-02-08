@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   w3e3.cpp
  * Author: Lasse Lybeck
  */
@@ -13,7 +13,7 @@ using namespace std;
 
 const double MIN_VAL = -1e3;
 const double MAX_VAL = 1e3;
-const double MAX_FACTOR = 1e3;
+const double MAX_FACTOR = 1e10;
 
 void random_diagonally_dominant(Mat_DP& a) {
     for (int i = 0; i < a.nrows(); i++) {

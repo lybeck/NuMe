@@ -1,4 +1,5 @@
-/* 
+
+/*
  * File:   w3e2.cpp
  * Author: Lasse Lybeck
  */
@@ -35,15 +36,14 @@ double poly_eval(poly_coeffs const& c, double x) {
 }
 
 double trapz_poly_integral(poly_coeffs const& c, double a, double b, int n) {
-    
+
     auto f = [c] (double x) {
         return poly_eval(c, x);
     };
-    
+
     double h = (b - a) / n;
     double sum = 0;
     for (int k = 0; k <= n; k++) {
-        // x_k = a + k * h
         sum += f(a + k * h);
     }
     return h * sum - h / 2 * (f(a) + f(b));
@@ -87,7 +87,7 @@ void run_comparison() {
 
     printf("Analytic integral = %-.12g\n\n", analytic);
     printf("%-8s %-14s %-20s %-15s\n", "n", "I(a,b,n)", "|I(a,b,n) - I(a,b)|", "h*h");
-    for (int n = 10; n <= 1e6; n *= 10) {
+    for (int n = 10; n <= 1e3; n *= 10) {
         double numeric = trapz_poly_integral(c, a, b, n);
         double diff = abs(analytic - numeric);
         double h = (b - a) / n;

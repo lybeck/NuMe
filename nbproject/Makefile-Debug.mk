@@ -36,7 +36,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/myutil/eps.o \
+	${OBJECTDIR}/src/myutil/myeigen.o \
 	${OBJECTDIR}/src/myutil/myplot.o \
+	${OBJECTDIR}/src/test/jam.o \
+	${OBJECTDIR}/src/test/segfault.o \
 	${OBJECTDIR}/src/w1/w1e1.o \
 	${OBJECTDIR}/src/w1/w1e2.o \
 	${OBJECTDIR}/src/w1/w1e3.o \
@@ -52,7 +55,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/w3/w3e1.o \
 	${OBJECTDIR}/src/w3/w3e2.o \
 	${OBJECTDIR}/src/w3/w3e3.o \
-	${OBJECTDIR}/src/w3/w3e4.o
+	${OBJECTDIR}/src/w3/w3e4.o \
+	${OBJECTDIR}/src/w3/w3e5.o \
+	${OBJECTDIR}/src/w4/w4e1.o
 
 
 # C Compiler Flags
@@ -84,10 +89,25 @@ ${OBJECTDIR}/src/myutil/eps.o: src/myutil/eps.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/myutil/eps.o src/myutil/eps.cpp
 
+${OBJECTDIR}/src/myutil/myeigen.o: src/myutil/myeigen.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/myutil
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/myutil/myeigen.o src/myutil/myeigen.cpp
+
 ${OBJECTDIR}/src/myutil/myplot.o: src/myutil/myplot.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/myutil
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/myutil/myplot.o src/myutil/myplot.cpp
+
+${OBJECTDIR}/src/test/jam.o: src/test/jam.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/test
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test/jam.o src/test/jam.cpp
+
+${OBJECTDIR}/src/test/segfault.o: src/test/segfault.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/test
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test/segfault.o src/test/segfault.cpp
 
 ${OBJECTDIR}/src/w1/w1e1.o: src/w1/w1e1.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/w1
@@ -168,6 +188,16 @@ ${OBJECTDIR}/src/w3/w3e4.o: src/w3/w3e4.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/w3
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w3/w3e4.o src/w3/w3e4.cpp
+
+${OBJECTDIR}/src/w3/w3e5.o: src/w3/w3e5.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w3
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w3/w3e5.o src/w3/w3e5.cpp
+
+${OBJECTDIR}/src/w4/w4e1.o: src/w4/w4e1.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w4
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w4/w4e1.o src/w4/w4e1.cpp
 
 # Subprojects
 .build-subprojects:

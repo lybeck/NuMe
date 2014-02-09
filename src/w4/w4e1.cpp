@@ -131,5 +131,7 @@ int main() {
     cout << endl;
 
     plot_fit(x, y, c);
+    
+    return 0;
 }
 

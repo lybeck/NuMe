@@ -56,6 +56,8 @@
         <itemPath>src/w4/w4e5.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="w5" displayName="w5" projectFiles="true">
+        <itemPath>src/w5/w5e1.cpp</itemPath>
+        <itemPath>src/w5/w5e2.cpp</itemPath>
         <itemPath>src/w5/w5e5.cpp</itemPath>
         <itemPath>src/w5/w5e6.cpp</itemPath>
       </logicalFolder>
@@ -156,6 +158,10 @@
       </item>
       <item path="src/w4/w4e5.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/w5/w5e1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/w5/w5e2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/w5/w5e5.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w5/w5e6.cpp" ex="false" tool="1" flavor2="0">
@@ -238,6 +244,10 @@
       <item path="src/w4/w4e4.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w4/w4e5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/w5/w5e1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/w5/w5e2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w5/w5e5.cpp" ex="false" tool="1" flavor2="0">
       </item>

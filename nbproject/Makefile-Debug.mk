@@ -61,6 +61,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/w4/w4e2.o \
 	${OBJECTDIR}/src/w4/w4e4.o \
 	${OBJECTDIR}/src/w4/w4e5.o \
+	${OBJECTDIR}/src/w5/w5e1.o \
+	${OBJECTDIR}/src/w5/w5e2.o \
 	${OBJECTDIR}/src/w5/w5e5.o \
 	${OBJECTDIR}/src/w5/w5e6.o
 
@@ -218,6 +220,16 @@ ${OBJECTDIR}/src/w4/w4e5.o: src/w4/w4e5.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/w4
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w4/w4e5.o src/w4/w4e5.cpp
+
+${OBJECTDIR}/src/w5/w5e1.o: src/w5/w5e1.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w5
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w5/w5e1.o src/w5/w5e1.cpp
+
+${OBJECTDIR}/src/w5/w5e2.o: src/w5/w5e2.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w5
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w5/w5e2.o src/w5/w5e2.cpp
 
 ${OBJECTDIR}/src/w5/w5e5.o: src/w5/w5e5.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/w5

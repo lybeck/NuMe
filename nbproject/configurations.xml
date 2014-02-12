@@ -22,6 +22,10 @@
         <itemPath>src/myutil/myeigen.cpp</itemPath>
         <itemPath>src/myutil/myplot.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="test" displayName="test" projectFiles="true">
+        <itemPath>src/test/jam.cpp</itemPath>
+        <itemPath>src/test/segfault.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="w1" displayName="w1" projectFiles="true">
         <itemPath>src/w1/w1e1.cpp</itemPath>
         <itemPath>src/w1/w1e2.cpp</itemPath>
@@ -39,7 +43,6 @@
         <itemPath>src/w2/w2e5.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="w3" displayName="w3" projectFiles="true">
-        <itemPath>src/w3/segfault.cpp</itemPath>
         <itemPath>src/w3/w3e1.cpp</itemPath>
         <itemPath>src/w3/w3e2.cpp</itemPath>
         <itemPath>src/w3/w3e3.cpp</itemPath>
@@ -47,12 +50,8 @@
         <itemPath>src/w3/w3e5.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="w4" displayName="w4" projectFiles="true">
-        <logicalFolder name="data" displayName="data" projectFiles="true">
-          <itemPath>src/w4/data/e1.txt</itemPath>
-        </logicalFolder>
         <itemPath>src/w4/w4e1.cpp</itemPath>
         <itemPath>src/w4/w4e2.cpp</itemPath>
-        <itemPath>src/w4/w4e3.cpp</itemPath>
         <itemPath>src/w4/w4e4.cpp</itemPath>
         <itemPath>src/w4/w4e5.cpp</itemPath>
       </logicalFolder>
@@ -73,12 +72,13 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>src/w5</Elem>
     <Elem>src/w4</Elem>
     <Elem>src/w3</Elem>
     <Elem>src/w2</Elem>
     <Elem>src/w1</Elem>
     <Elem>src/myutil</Elem>
+    <Elem>src/test</Elem>
+    <Elem>src/w5</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -109,6 +109,10 @@
       </item>
       <item path="src/myutil/myplot.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/test/jam.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/test/segfault.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/w1/w1e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w1/w1e2.cpp" ex="false" tool="1" flavor2="0">
@@ -133,8 +137,6 @@
       </item>
       <item path="src/w2/w2e5.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/w3/segfault.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/w3/w3e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w3/w3e2.cpp" ex="false" tool="1" flavor2="0">
@@ -145,13 +147,9 @@
       </item>
       <item path="src/w3/w3e5.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/w4/data/e1.txt" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/w4/w4e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w4/w4e2.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/w4/w4e3.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w4/w4e4.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -192,6 +190,10 @@
       </item>
       <item path="src/myutil/myplot.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/test/jam.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/test/segfault.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/w1/w1e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w1/w1e2.cpp" ex="false" tool="1" flavor2="0">
@@ -216,8 +218,6 @@
       </item>
       <item path="src/w2/w2e5.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/w3/segfault.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/w3/w3e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w3/w3e2.cpp" ex="false" tool="1" flavor2="0">
@@ -228,13 +228,9 @@
       </item>
       <item path="src/w3/w3e5.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/w4/data/e1.txt" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/w4/w4e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w4/w4e2.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/w4/w4e3.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w4/w4e4.cpp" ex="false" tool="1" flavor2="0">
       </item>

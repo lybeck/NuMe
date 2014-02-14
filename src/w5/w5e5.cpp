@@ -97,7 +97,7 @@ int main() {
     run_test(test_a, minn, maxn, times, eps);
     cout << endl << "Testing for transp(pinv(A)) == pinv(transp(A))..." << endl;
     run_test(test_b, minn, maxn, times, eps);
-    cout << endl << "Testing for pinv(A * B) == pinv(B) * pinb(A)..." << endl;
+    cout << endl << "Testing for pinv(A * B) == pinv(B) * pinv(A)..." << endl;
     run_test(test_c, minn, maxn, times, eps);
     cout << endl;
 

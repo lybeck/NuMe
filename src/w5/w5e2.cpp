@@ -6,6 +6,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include "nr.h"
 #include "matutl02.h"
@@ -14,12 +15,16 @@
 using namespace std;
 
 void run_interp(Vec_DP const& x, Vec_DP const& y) {
-    Vec_DP xint(5), yint(5), dyint(5);
+    Vec_DP xint(5), yint(5), err(5);
+    cout << endl << "Interpolations:" << endl;
+    cout << left;
+    cout << endl << setw(10) << "x" << setw(15) << "f(x)" << setw(15) << "error est" << endl;
     for (int i = 0; i < xint.size(); i++) {
         xint[i] = 2 + i * .25;
-        NR::polint(x, y, xint[i], yint[i], dyint[i]);
+        NR::polint(x, y, xint[i], yint[i], err[i]);
+        cout << setw(10) << xint[i] << setw(15) << yint[i] << setw(15) << err[i] << endl;
     }
-    
+
     myplot::plot_data data("rx"), interp("b.");
     for (int i = 0; i < x.size(); i++) {
         data.add_point(x[i], y[i]);
@@ -39,7 +44,7 @@ void run_static() {
     y[1] = 125;
     y[2] = 729;
     y[3] = 2197;
-    
+
     run_interp(x, y);
 }
 
@@ -50,7 +55,7 @@ void run_random() {
         x[i] = i + 1;
         y[i] = rdm(-10, 10);
     }
-    
+
     run_interp(x, y);
 }
 

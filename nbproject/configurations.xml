@@ -4,12 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="myutil" displayName="myutil" projectFiles="true">
-        <itemPath>src/myutil/eps.h</itemPath>
-        <itemPath>src/myutil/myeigen.h</itemPath>
-        <itemPath>src/myutil/myhouse2.h</itemPath>
-        <itemPath>src/myutil/myplot.h</itemPath>
-      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -18,12 +12,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="myutil" displayName="myutil" projectFiles="true">
-        <itemPath>src/myutil/eps.cpp</itemPath>
-        <itemPath>src/myutil/myeigen.cpp</itemPath>
-        <itemPath>src/myutil/myhouse2.cpp</itemPath>
-        <itemPath>src/myutil/myplot.cpp</itemPath>
-      </logicalFolder>
       <logicalFolder name="w1" displayName="w1" projectFiles="true">
         <itemPath>src/w1/w1e1.cpp</itemPath>
         <itemPath>src/w1/w1e2.cpp</itemPath>
@@ -104,22 +92,6 @@
           <commandLine>-I/home/llybeck/myexamples/gnuplot -I/home/llybeck/myexamples/democpp -I/usr/local/numerical-recipes/recipes_cpp/utils -L/usr/local/numerical-recipes/recipes_cpp -L/home/llybeck/myexamples/lib -lm -lmyexamples -lnr -lgsl -lgslcblas</commandLine>
         </ccTool>
       </compileType>
-      <item path="src/myutil/eps.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/myutil/eps.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/myutil/myeigen.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/myutil/myeigen.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/myutil/myhouse2.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/myutil/myhouse2.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/myutil/myplot.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/myutil/myplot.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/w1/w1e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w1/w1e2.cpp" ex="false" tool="1" flavor2="0">
@@ -201,22 +173,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="src/myutil/eps.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/myutil/eps.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/myutil/myeigen.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/myutil/myeigen.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/myutil/myhouse2.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/myutil/myhouse2.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/myutil/myplot.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/myutil/myplot.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/w1/w1e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w1/w1e2.cpp" ex="false" tool="1" flavor2="0">

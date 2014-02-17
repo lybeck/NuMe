@@ -21,13 +21,14 @@ const double max_val = 1e2;
 bool eq(Mat_DP const& a, Mat_DP const& b, double tolerance = 1e-6) {
     if (a.nrows() != b.nrows() || a.ncols() != b.ncols())
         return false;
+    Mat_DP c(a.nrows(), a.ncols());
+    double sum = 0;
     for (int i = 0; i < a.nrows(); i++) {
         for (int j = 0; j < a.ncols(); j++) {
-            if (abs(a[i][j] / b[i][j] - 1) > tolerance)
-                return false;
+            sum += pow((a[i][j] - b[i][j]), 2);
         }
     }
-    return true;
+    return pow(sum, .5) < tolerance;
 }
 
 bool test_a(int n, int m, double tolerance) {
@@ -63,7 +64,7 @@ bool test_c(int n, int m, double tolerance) {
     pseudoinv(a, pinva);
     pseudoinv(b, pinvb);
     matmul(pinvb, pinva, m2);
-
+    
     return eq(m1, m2, tolerance);
 }
 

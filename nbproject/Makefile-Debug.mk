@@ -35,10 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/myutil/eps.o \
-	${OBJECTDIR}/src/myutil/myeigen.o \
-	${OBJECTDIR}/src/myutil/myhouse2.o \
-	${OBJECTDIR}/src/myutil/myplot.o \
 	${OBJECTDIR}/src/w1/w1e1.o \
 	${OBJECTDIR}/src/w1/w1e2.o \
 	${OBJECTDIR}/src/w1/w1e3.o \
@@ -93,26 +89,6 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nume: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nume ${OBJECTFILES} ${LDLIBSOPTIONS}
-
-${OBJECTDIR}/src/myutil/eps.o: src/myutil/eps.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/myutil
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/myutil/eps.o src/myutil/eps.cpp
-
-${OBJECTDIR}/src/myutil/myeigen.o: src/myutil/myeigen.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/myutil
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/myutil/myeigen.o src/myutil/myeigen.cpp
-
-${OBJECTDIR}/src/myutil/myhouse2.o: src/myutil/myhouse2.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/myutil
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/myutil/myhouse2.o src/myutil/myhouse2.cpp
-
-${OBJECTDIR}/src/myutil/myplot.o: src/myutil/myplot.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/myutil
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/myutil/myplot.o src/myutil/myplot.cpp
 
 ${OBJECTDIR}/src/w1/w1e1.o: src/w1/w1e1.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/w1

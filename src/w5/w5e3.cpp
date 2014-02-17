@@ -41,13 +41,13 @@ int main() {
     }
     
     Vec_DP y2(n);
-    double yp1 = -2.29428;
-    double ypn = 0.934735;
+    double yp1 = INFINITY;
+    double ypn = INFINITY;
     NR::spline(xdata, ydata, yp1, ypn, y2);
     
-    double xmin = xdata[1];
-    double xmax = xdata[n - 2];
-    double dx = .1;
+    double xmin = xdata[0];
+    double xmax = xdata[n - 1];
+    double dx = .01;
     
     double y, err, errx;
     double maxerr = -INFINITY;

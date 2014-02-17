@@ -78,15 +78,26 @@ int main() {
 
     Vec_DP polyy(x.size());
     poly_interp(xdata, ydata, x, polyy);
+    
+    double yp1, ypn;
+    
+    yp1 = ypn = 0;
+    Vec_DP periodicspl(x.size());
+    spline_interp(xdata, ydata, yp1, ypn, x, periodicspl);
 
-    double yp1 = 1;
-    double ypn = 0;
-    Vec_DP spliney(x.size());
-    spline_interp(xdata, ydata, yp1, ypn, x, spliney);
-
+    yp1 = 1e30;
+    ypn = 1e30;
+    Vec_DP naturalspl(x.size());
+    spline_interp(xdata, ydata, yp1, ypn, x, naturalspl);
+    
     myplot::plot_data data("rx");
     for (int i = 0; i < xdata.size(); i++) {
         data.add_point(xdata[i], ydata[i]);
+    }
+    
+    myplot::plot_data sine("k-");
+    for (int i = 0; i < x.size(); i++) {
+        sine.add_point(x[i], sin(x[i]));
     }
 
     myplot::plot_data poly("b-");
@@ -94,14 +105,19 @@ int main() {
         poly.add_point(x[i], polyy[i]);
     }
 
-    myplot::plot_data spln("m-");
+    myplot::plot_data perspl("c-");
     for (int i = 0; i < x.size(); i++) {
-        spln.add_point(x[i], spliney[i]);
+        perspl.add_point(x[i], periodicspl[i]);
     }
 
-    myplot::plot({data, poly});
+    myplot::plot_data natspl("m-");
+    for (int i = 0; i < x.size(); i++) {
+        natspl.add_point(x[i], naturalspl[i]);
+    }
 
-    myplot::plot({data, spln});
+    myplot::plot({data, sine, poly});
+    myplot::plot({data, sine, perspl});
+    myplot::plot({data, sine, natspl});
 
     return 0;
 }

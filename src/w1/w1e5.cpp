@@ -19,11 +19,11 @@ double fixed_point_iteration(double (*f)(double), double x0) {
     for (int i = 1; i <= max_iter; i++) {
         oldx = x;
         x = f(x);
-        if(abs(x - oldx) < EPS)
+        if (abs(x - oldx) < EPS)
             break;
-        if(i == max_iter)
+        if (i == max_iter)
             cout << "WARNING! Maximum number of iterations reached in fixed point iteration,"
-                    " the iteration might not have converged!" << endl;
+                " the iteration might not have converged!" << endl;
     }
     return x;
 }
@@ -31,8 +31,12 @@ double fixed_point_iteration(double (*f)(double), double x0) {
 int main() {
 
     double a = fixed_point_iteration(&cos, 0);
-    double b = fixed_point_iteration([] (double x) {return exp(-x);}, 0);
-    double c = fixed_point_iteration([] (double x) {return 1 - cosh(x);}, 0);
+    double b = fixed_point_iteration([] (double x) {
+        return exp(-x);
+    }, 0);
+    double c = fixed_point_iteration([] (double x) {
+        return 1 - cosh(x);
+    }, 0);
 
     cout << "a = " << a << endl;
     cout << "b = " << b << endl;

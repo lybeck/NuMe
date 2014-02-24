@@ -26,29 +26,29 @@ void plot_gamma(Vec_DP const& xdata, Vec_DP const& ydata, Vec_DP const& y2, doub
         spline.add_point(x, y);
         gamm.add_point(x, tgamma(x));
     }
-    
+
     myplot::plot({data, gamm, spline});
 }
 
 int main() {
-    
+
     int n = 20;
     Vec_DP xdata(n), ydata(n);
-    
+
     for (int i = 0; i < n; i++) {
         xdata[i] = .5 + .1 * (i + 1);
         ydata[i] = tgamma(xdata[i]);
     }
-    
+
     Vec_DP y2(n);
     double yp1 = INFINITY;
     double ypn = INFINITY;
     NR::spline(xdata, ydata, yp1, ypn, y2);
-    
+
     double xmin = xdata[0];
     double xmax = xdata[n - 1];
     double dx = .01;
-    
+
     double y, err, errx;
     double maxerr = -INFINITY;
     for (double x = xmin; x <= xmax; x += dx) {
@@ -59,15 +59,15 @@ int main() {
             errx = x;
         }
     }
-    
+
     cout << endl << "Maximum error: " << maxerr << ", at x = " << errx << endl;
-    
-    
+
+
     /*
      * Plotting
      */
     plot_gamma(xdata, ydata, y2, errx);
-    
+
     return 0;
 }
 

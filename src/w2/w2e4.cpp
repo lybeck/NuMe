@@ -146,7 +146,7 @@ int main() {
     run_tests(&is_product_tridiagonal, minn, maxn, tests, eps);
 
     cout << endl;
-    
+
     return 0;
 }
 

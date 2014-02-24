@@ -50,7 +50,7 @@ void plot_fit(vector<double> const& xdata, vector<double> const& ydata, poly_coe
     minx -= 1;
     maxx += 1;
     double dx = (maxx - minx) / (p - 1);
-    
+
     myplot::plot_data fit("b-");
     for (double x = minx; x <= maxx; x += dx) {
         fit.add_point(x, poly_val(c, x));
@@ -120,7 +120,7 @@ int main() {
         y.push_back(temp);
     }
     file.close();
-    
+
     poly_coeffs c = poly_fit(x, y, 2);
 
     cout << fixed;
@@ -131,7 +131,7 @@ int main() {
     cout << endl;
 
     plot_fit(x, y, c);
-    
+
     return 0;
 }
 

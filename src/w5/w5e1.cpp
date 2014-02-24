@@ -78,9 +78,9 @@ int main() {
 
     Vec_DP polyy(x.size());
     poly_interp(xdata, ydata, x, polyy);
-    
+
     double yp1, ypn;
-    
+
     yp1 = ypn = 0;
     Vec_DP periodicspl(x.size());
     spline_interp(xdata, ydata, yp1, ypn, x, periodicspl);
@@ -89,12 +89,12 @@ int main() {
     ypn = 1e30;
     Vec_DP naturalspl(x.size());
     spline_interp(xdata, ydata, yp1, ypn, x, naturalspl);
-    
+
     myplot::plot_data data("rx");
     for (int i = 0; i < xdata.size(); i++) {
         data.add_point(xdata[i], ydata[i]);
     }
-    
+
     myplot::plot_data sine("k-");
     for (int i = 0; i < x.size(); i++) {
         sine.add_point(x[i], sin(x[i]));

@@ -18,12 +18,12 @@ void f() {
 }
 
 int main() {
-    
+
     thread t1(f);
     thread t2(f);
     t1.join();
     t2.join();
-    
+
     return 0;
 }
 

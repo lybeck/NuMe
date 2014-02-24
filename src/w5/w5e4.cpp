@@ -47,7 +47,9 @@ void draw_2nd_der_sum(func f, double minx, double maxx) {
 
 int main() {
 
-    draw_2nd_der([] (double x) {return pow(x, 3);}, -3, 3);
+    draw_2nd_der([] (double x) {
+        return pow(x, 3);
+    }, -3, 3);
     draw_2nd_der_sum(sin, -M_PI, M_PI);
 
     return 0;

@@ -28,7 +28,7 @@ int main() {
         sin >> tmp;
         y.push_back(tmp);
     }
-    
+
     cout << "(x, y) pairs:" << endl;
     for (int i = 0; i < x.size(); i++) {
         cout << x[i] << ", " << y[i] << endl;

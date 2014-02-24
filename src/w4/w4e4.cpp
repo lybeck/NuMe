@@ -154,7 +154,7 @@ void run_normalize_test(Mat_DP const& a, double p) {
 void run_dot_mat_test(Mat_DP const& a, double p) {
     Mat_DP b(a.ncols(), a.ncols());
     scal_prod_mat(a, b, p);
-    
+
     cout << "Scalar product matrix:" << endl << b << endl;
 }
 

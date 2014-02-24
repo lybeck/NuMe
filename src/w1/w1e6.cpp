@@ -34,9 +34,9 @@ double gauss(double r) {
 }
 
 int main() {
-    
+
     double lib, form;
-    
+
     printf("%-7s %-15s %-15s %-15s\r\n", "r", "library func", "formula", "diff");
     for (int k = 1; k < 20; k++) {
         double r = 0.05 * k;
@@ -44,7 +44,7 @@ int main() {
         form = gauss(r);
         printf("%-7.2f %-15.8f %-15.8f %-15e\r\n", r, lib, form, form - lib);
     }
-    
+
     return 0;
 }
 

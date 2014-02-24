@@ -18,7 +18,7 @@ bool is_between(double x, double y1, double y2) {
 
 double monte_carlo_between_curves(double (*f) (double), double (*g) (double),
         double xmin, double xmax, double ymin, double ymax) {
-    
+
     int hits = 0;
     double x, y;
     for (int i = 0; i < monte_carlo_points; i++) {
@@ -28,7 +28,7 @@ double monte_carlo_between_curves(double (*f) (double), double (*g) (double),
             ++hits;
         }
     }
-    
+
     double area = (xmax - xmin) * (ymax - ymin);
     double ratio = (double) hits / monte_carlo_points;
 
@@ -41,7 +41,7 @@ int main() {
     init_srand();
 
     double d = monte_carlo_between_curves(&sin, &cos, 0, 2 * M_PI, -1, 1);
-    
+
     cout << "Area between curves = " << d << endl;
 }
 

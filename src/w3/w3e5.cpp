@@ -38,7 +38,7 @@ double diagonal_sum(Mat_DP const& a) {
 }
 
 bool is_eig_sum_success(Mat_DP const& a, double tolerance) {
-    if(a.nrows() != a.ncols()) {
+    if (a.nrows() != a.ncols()) {
         cerr << "Matrix not a square matrix! Cannot run eigenvalue sum test." << endl;
         return false;
     }
@@ -59,9 +59,9 @@ bool is_det_success(Mat_DP const& a, double tolerance) {
 }
 
 void run_tests(int minn, int maxn, int tests, double tolerance) {
-    
+
     cout << "Starting tests" << endl;
-    
+
     int totalTests = (maxn - minn + 1) * tests;
     int eig_fails = 0;
     int det_fails = 0;
@@ -70,9 +70,9 @@ void run_tests(int minn, int maxn, int tests, double tolerance) {
         Mat_DP a(n, n);
         for (int i = 0; i < tests; i++) {
             random_matrix(a);
-            if(!is_eig_sum_success(a, tolerance))
+            if (!is_eig_sum_success(a, tolerance))
                 ++eig_fails;
-            if(!is_det_success(a, tolerance))
+            if (!is_det_success(a, tolerance))
                 ++det_fails;
         }
     }
@@ -82,9 +82,9 @@ void run_tests(int minn, int maxn, int tests, double tolerance) {
 }
 
 int main() {
-    
-//    init_srand();
-    
+
+    //    init_srand();
+
     Mat_DP a(4, 4);
     random_matrix(a);
     Vec_CPLX_DP e(4);
@@ -92,18 +92,18 @@ int main() {
 
     double eps = get_sqrt_machine_epsilon();
     run_tests(3, 30, 100, eps);
-    
-//    Mat_DP a(3,3);
-//    a[0][0] = 0;
-//    a[0][1] = 1;
-//    a[1][0] = -1;
-//    a[1][1] = 0;
-//    cout << a << endl;
-//    Vec_CPLX_DP e(a.nrows());
-//    eigen(a, e);
-//    for (int i = 0; i < e.size(); i++) {
-//        cout << e[i] << endl;
-//    }
+
+    //    Mat_DP a(3,3);
+    //    a[0][0] = 0;
+    //    a[0][1] = 1;
+    //    a[1][0] = -1;
+    //    a[1][1] = 0;
+    //    cout << a << endl;
+    //    Vec_CPLX_DP e(a.nrows());
+    //    eigen(a, e);
+    //    for (int i = 0; i < e.size(); i++) {
+    //        cout << e[i] << endl;
+    //    }
 
     return 0;
 }

@@ -36,14 +36,14 @@ void plot_line(const vector<double> x, const vector<double> y, double a, double 
 }
 
 void plot_result(Mat_DP const& A, Mat_DP const& y, double a, double b) {
-    
+
     vector<double> xdata(4);
     vector<double> ydata(4);
     for (int i = 0; i < xdata.size(); i++) {
         xdata[i] = A[i][0];
         ydata[i] = y[i][0];
     }
-    
+
     plot_line(xdata, ydata, a, b);
 }
 
@@ -51,7 +51,7 @@ void plot_result(Mat_DP const& A, Mat_DP const& y, double a, double b) {
  * 
  */
 int main() {
-    
+
     Mat_DP A(1, 1);
     Mat_DP y(1, 1);
     A = getmat("e2/A.dat");
@@ -72,15 +72,15 @@ int main() {
 
     // x = inv(At * A) * A' * y
     Mat_DP x = invtimesAt * y;
-    
+
     double a = x[0][0];
     double b = x[1][0];
-    
+
     // display the result
     cout << "y = " << a << " * x + " << b << endl;
-    
+
     plot_result(A, y, a, b);
-    
+
     return 0;
 }
 

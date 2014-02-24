@@ -24,10 +24,10 @@ bool is_between(double x, double y1, double y2) {
 }
 
 double monte_carlo_between_curves(double (*f) (double), double (*g) (double), double xmin, double xmax, double ymin, double ymax) {
-    
+
     ofstream p_hit_file(point_hit_filename);
     ofstream p_miss_file(point_miss_filename);
-    
+
     int hits = 0;
     double x, y, fx, gx;
     for (int i = 0; i < monte_carlo_points; i++) {
@@ -45,7 +45,7 @@ double monte_carlo_between_curves(double (*f) (double), double (*g) (double), do
 
     double area = (xmax - xmin) * (ymax - ymin);
     double ratio = (double) hits / monte_carlo_points;
-    
+
     p_hit_file.close();
     p_miss_file.close();
 
@@ -56,7 +56,7 @@ int main() {
 
     // seed the random
     init_srand();
-    
+
     double minx = 0;
     double maxx = 2 * M_PI;
 
@@ -66,21 +66,21 @@ int main() {
     double d = monte_carlo_between_curves(f1, f2, minx, maxx, -1, 1);
 
     cout << "Area between curves = " << d << endl;
-    
+
     ofstream f1_file(f1_filename);
     ofstream f2_file(f2_filename);
-    
+
     int points = 200;
     double dx = (maxx - minx) / (points - 1);
-    
+
     for (double x = minx; x <= maxx; x += dx) {
         f1_file << x << " " << f1(x) << endl;
         f2_file << x << " " << f2(x) << endl;
     }
-    
+
     f1_file.close();
     f2_file.close();
-    
+
     plot(f1_filename, "k-5", f2_filename, "k-5", point_hit_filename, "b.", point_miss_filename, "r.", NULL);
 }
 

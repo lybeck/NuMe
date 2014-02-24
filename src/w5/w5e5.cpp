@@ -64,7 +64,7 @@ bool test_c(int n, int m, double tolerance) {
     pseudoinv(a, pinva);
     pseudoinv(b, pinvb);
     matmul(pinvb, pinva, m2);
-    
+
     return eq(m1, m2, tolerance);
 }
 

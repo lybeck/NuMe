@@ -18,7 +18,7 @@ const double maxValue = 1e3;
 bool is_zero_matrix(Mat_DP const& a, double tolerance) {
     for (int i = 0; i < a.nrows(); i++) {
         for (int j = 0; j < a.ncols(); j++) {
-            if(abs(a[i][j]) > tolerance)
+            if (abs(a[i][j]) > tolerance)
                 return false;
         }
     }
@@ -70,7 +70,7 @@ bool test_mat_inverse(int p, int r, double tolerance) {
     Mat_DP B = create_test_matrix(Pinv, Rinv);
     Mat_DP Ainv(n, n);
     invmat(A, Ainv);
-    
+
     return is_zero_matrix(Ainv - B, tolerance);
 }
 

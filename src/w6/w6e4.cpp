@@ -43,22 +43,21 @@ Vec_DP solve(Vec_DP const& xdata, Vec_DP const& ydata) {
     return x;
 }
 
-double get_min_x() {
+void get_min_max(double& minx, double& maxx) {
     double a = coeff[0];
     double b = coeff[1];
     double c = coeff[2];
     double d = coeff[3];
     double e = coeff[4];
-    return (2 * sqrt(a * (a * c * c + 4 * a * e + b * b * e - b * c * d - d * d)) + 2 * a * c - b * d) / (4 * a + b * b);
-}
-
-double get_max_x() {
-    double a = coeff[0];
-    double b = coeff[1];
-    double c = coeff[2];
-    double d = coeff[3];
-    double e = coeff[4];
-    return (-2 * sqrt(a * (a * c * c + 4 * a * e + b * b * e - b * c * d - d * d)) + 2 * a * c - b * d) / (4 * a + b * b);
+    double x1 = (2 * sqrt(a * (a * c * c + 4 * a * e + b * b * e - b * c * d - d * d)) + 2 * a * c - b * d) / (4 * a + b * b);
+    double x2 = (-2 * sqrt(a * (a * c * c + 4 * a * e + b * b * e - b * c * d - d * d)) + 2 * a * c - b * d) / (4 * a + b * b);
+    if (x1 < x2) {
+        minx = x1;
+        maxx = x2;
+    } else {
+        minx = x2;
+        maxx = x1;
+    }
 }
 
 int main() {
@@ -82,8 +81,8 @@ int main() {
     }
 
     int points = 300;
-    double minx = get_min_x();
-    double maxx = get_max_x();
+    double minx, maxx;
+    get_min_max(minx, maxx);
     double dx = (maxx - minx) / (points - 1);
     for (int i = 0; i < points; i++) {
         double xx = minx + i * dx;

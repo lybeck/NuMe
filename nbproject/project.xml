@@ -8,15 +8,18 @@
             <cpp-extensions>cpp</cpp-extensions>
             <header-extensions/>
             <sourceEncoding>UTF-8</sourceEncoding>
-            <make-dep-projects/>
+            <make-dep-projects>
+                <make-dep-project>../Utils-Nume</make-dep-project>
+            </make-dep-projects>
             <sourceRootList>
+                <sourceRootElem>src/w6</sourceRootElem>
                 <sourceRootElem>src/w5</sourceRootElem>
                 <sourceRootElem>src/w4</sourceRootElem>
                 <sourceRootElem>src/w3</sourceRootElem>
                 <sourceRootElem>src/w2</sourceRootElem>
                 <sourceRootElem>src/w1</sourceRootElem>
                 <sourceRootElem>src/myutil</sourceRootElem>
-                <sourceRootElem>src/w6</sourceRootElem>
+                <sourceRootElem>src/test</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

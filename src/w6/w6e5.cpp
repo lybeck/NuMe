@@ -35,7 +35,7 @@ double der(func f, double x) {
 void plot_fun(func f, double minx, double maxx) {
     int points = 200;
     double dx = (maxx - minx) / (points - 1);
-    myplot::plot_data fun("b-"), df("r-"), F("g-");
+    myplot::plot_data fun("b-", "Function"), df("r-", "Derivative"), F("g-", "Integral");
     for (double x = minx; x <= maxx; x += dx) {
         fun.add_point(x, f(x));
         df.add_point(x, der(f, x));

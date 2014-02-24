@@ -35,8 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/test/jam.o \
-	${OBJECTDIR}/src/test/segfault.o \
 	${OBJECTDIR}/src/w1/w1e1.o \
 	${OBJECTDIR}/src/w1/w1e2.o \
 	${OBJECTDIR}/src/w1/w1e3.o \
@@ -49,6 +47,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/w2/w2e3.o \
 	${OBJECTDIR}/src/w2/w2e4.o \
 	${OBJECTDIR}/src/w2/w2e5.o \
+	${OBJECTDIR}/src/w3/segfault.o \
 	${OBJECTDIR}/src/w3/w3e1.o \
 	${OBJECTDIR}/src/w3/w3e2.o \
 	${OBJECTDIR}/src/w3/w3e3.o \
@@ -56,6 +55,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/w3/w3e5.o \
 	${OBJECTDIR}/src/w4/w4e1.o \
 	${OBJECTDIR}/src/w4/w4e2.o \
+	${OBJECTDIR}/src/w4/w4e3.o \
 	${OBJECTDIR}/src/w4/w4e4.o \
 	${OBJECTDIR}/src/w4/w4e5.o \
 	${OBJECTDIR}/src/w5/w5e1.o \
@@ -92,16 +92,6 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nume: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nume ${OBJECTFILES} ${LDLIBSOPTIONS}
-
-${OBJECTDIR}/src/test/jam.o: src/test/jam.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/test
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test/jam.o src/test/jam.cpp
-
-${OBJECTDIR}/src/test/segfault.o: src/test/segfault.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/test
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test/segfault.o src/test/segfault.cpp
 
 ${OBJECTDIR}/src/w1/w1e1.o: src/w1/w1e1.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/w1
@@ -163,6 +153,11 @@ ${OBJECTDIR}/src/w2/w2e5.o: src/w2/w2e5.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e5.o src/w2/w2e5.cpp
 
+${OBJECTDIR}/src/w3/segfault.o: src/w3/segfault.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w3
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w3/segfault.o src/w3/segfault.cpp
+
 ${OBJECTDIR}/src/w3/w3e1.o: src/w3/w3e1.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/w3
 	${RM} "$@.d"
@@ -197,6 +192,11 @@ ${OBJECTDIR}/src/w4/w4e2.o: src/w4/w4e2.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/w4
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w4/w4e2.o src/w4/w4e2.cpp
+
+${OBJECTDIR}/src/w4/w4e3.o: src/w4/w4e3.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w4
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w4/w4e3.o src/w4/w4e3.cpp
 
 ${OBJECTDIR}/src/w4/w4e4.o: src/w4/w4e4.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/w4

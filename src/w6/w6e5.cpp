@@ -45,19 +45,19 @@ void plot_fun(func f, double minx, double maxx) {
 }
 
 int main() {
-    
-//    func g = [] (double x) {return pow(x, 2);};
-//    plot_fun(g, -4, 4);
-    
+
+    //    func g = [] (double x) {return pow(x, 2);};
+    //    plot_fun(g, -4, 4);
+
     init_srand();
-    
+
     a1 = rdm(-2, 2);
     a2 = rdm(-2, 2);
     b1 = rdm(-2, 2);
     b2 = rdm(-2, 2);
-    
+
     plot_fun(&f, -M_PI, M_PI);
-    
+
     return 0;
 }
 

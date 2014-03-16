@@ -71,7 +71,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/w6/w6e2.o \
 	${OBJECTDIR}/src/w6/w6e3.o \
 	${OBJECTDIR}/src/w6/w6e4.o \
-	${OBJECTDIR}/src/w6/w6e5.o
+	${OBJECTDIR}/src/w6/w6e5.o \
+	${OBJECTDIR}/src/w7/w7e1.o \
+	${OBJECTDIR}/src/w7/w7e5.o
 
 
 # C Compiler Flags
@@ -282,6 +284,16 @@ ${OBJECTDIR}/src/w6/w6e5.o: src/w6/w6e5.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/w6
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w6/w6e5.o src/w6/w6e5.cpp
+
+${OBJECTDIR}/src/w7/w7e1.o: src/w7/w7e1.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w7
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w7/w7e1.o src/w7/w7e1.cpp
+
+${OBJECTDIR}/src/w7/w7e5.o: src/w7/w7e5.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w7
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w7/w7e5.o src/w7/w7e5.cpp
 
 # Subprojects
 .build-subprojects:

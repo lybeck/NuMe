@@ -12,6 +12,7 @@
                 <make-dep-project>../Utils-Nume</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
+                <sourceRootElem>src/w7</sourceRootElem>
                 <sourceRootElem>src/w6</sourceRootElem>
                 <sourceRootElem>src/w5</sourceRootElem>
                 <sourceRootElem>src/w4</sourceRootElem>

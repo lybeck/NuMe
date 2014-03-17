@@ -67,6 +67,9 @@
         <itemPath>src/w7/w7e1.cpp</itemPath>
         <itemPath>src/w7/w7e5.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="w8" displayName="w8" projectFiles="true">
+        <itemPath>src/w8/w8e1.cpp</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -81,6 +84,7 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
+    <Elem>src/w8</Elem>
     <Elem>src/w7</Elem>
     <Elem>src/w6</Elem>
     <Elem>src/w5</Elem>
@@ -198,6 +202,8 @@
       </item>
       <item path="src/w7/w7e5.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/w8/w8e1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -296,6 +302,8 @@
       <item path="src/w7/w7e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/w7/w7e5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/w8/w8e1.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

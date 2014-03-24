@@ -31,7 +31,7 @@ Vec_DP operator*(Mat_DP const& A, Vec_DP const& b) {
 void vecsub(Vec_DP const& a, Vec_DP const& b, Vec_DP& c) {
     if (a.size() != b.size() || a.size() != c.size())
         throw runtime_error("Dimensions mismatch in Vec_DP subtraction!");
-    
+
     for (int i = 0; i < a.size(); i++) {
         c[i] = a[i] - b[i];
     }
@@ -53,6 +53,17 @@ Vec_DP fa(Vec_DP const& x) {
     return ans;
 }
 
+Vec_DP fb(Vec_DP const& x) {
+    if (x.size() != 3)
+        throw runtime_error("Wrong dimension in fa!");
+
+    Vec_DP ans(3);
+    ans[0] = 3 * x[0] - cos(x[1] * x[2]) - .5;
+    ans[1] = pow(x[0], 2) - 81 * pow(x[1] + .1, 2) + sin(x[2]) + 10.6;
+    ans[2] = exp(-x[0] * x[1]) + 20 * x[2] + (10 * M_PI - 3) / 3.0;
+    return ans;
+}
+
 void newton_step(fun f, Vec_DP const& xold, Vec_DP& xnew) {
     int n = xold.size();
     Mat_DP J(n, n), Jinv(n, n);
@@ -69,9 +80,9 @@ Vec_DP newton(fun f, Vec_DP x0) {
 
     Vec_DP xnew(x0);
     for (int i = 0; i < max_iter; i++) {
-        
+
         Vec_DP xold(xnew);
-        
+
         newton_step(f, xold, xnew);
 
         Vec_DP diff = xnew - xold;
@@ -81,7 +92,7 @@ Vec_DP newton(fun f, Vec_DP x0) {
     }
 
     cout << "WARNING! Newton iteration did not converge." << endl;
-    
+
     return xnew;
 }
 
@@ -90,10 +101,26 @@ int main() {
     Vec_DP xa(2);
     xa[0] = 2;
     xa[1] = 0;
-    Vec_DP ans = newton(&fa, xa);
-    
-    cout << "x1 = " << ans[0] << endl;
-    cout << "x2 = " << ans[1] << endl;
+    Vec_DP x = newton(&fa, xa);
+
+    cout << scientific;
+    cout << endl;
+    cout << "Excercise a:" << endl;
+    cout << "x1 = " << x[0] << endl;
+    cout << "x2 = " << x[1] << endl;
+    cout << "fa(x) = " << fa(x) << endl;
+
+    Vec_DP xb(3);
+    xb[0] = 3;
+    xb[1] = 4;
+    xb[2] = 5;
+    x = newton(&fb, xb);
+
+    cout << "Excercise b:" << endl;
+    cout << "x1 = " << x[0] << endl;
+    cout << "x2 = " << x[1] << endl;
+    cout << "x3 = " << x[2] << endl;
+    cout << "fb(x) = " << fb(x) << endl;
 
     return 0;
 }

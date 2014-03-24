@@ -42,37 +42,37 @@ void run_hilb_tests() {
         cout << endl << "n = " << n << endl << endl;
         
         Mat_DP H(n, n);
-        Vec_DP b(n), x(n), xtr(n);
+        Vec_DP b(n), onevec(n), x(n), xtr(n);
         hilb(H);
-        ones(b);
+        ones(onevec);
+        matvecmul(H, onevec, b);
         
-        SVDsolve(H, b, x);
-        Vec_DP svd_diff = b - x;
+        LUsolve(H, b, x);
+        Vec_DP svd_diff = onevec - x;
         double svd_err = vnormp(svd_diff, 2);
         
         double besterr = INFINITY;
-        double besteps;
+        int besteps;
         for (int p = 0; p <= 16; p++) {
             double eps = pow(10.0, -p);
             Vec_DP xx(n);
             SVDsolve2(H, b, xx, eps);
-            Vec_DP diff = b - xx;
+            Vec_DP diff = xx - onevec;
             double err = vnormp(diff, 2);
-            cout << "eps = " << eps << endl;
-            cout << "err = " << err << endl;
+            cout << "eps = 10^-" << p << ", err = " << err << endl;
             if(err < besterr) {
                 besterr = err;
-                besteps = eps;
+                besteps = p;
                 xtr = xx;
             }
         }
         
-        cout << "With svd solve:" << endl;
+        cout << "With lu solve:" << endl;
         cout << x;
         cout << "Error: " << svd_err << endl << endl;
         
         cout << "With truncated svd:" << endl;
-        cout << "Best eps = " << besteps << endl;
+        cout << "Best eps = 10^-" << besteps << endl;
         cout << xtr;
         cout << "Error: " << besterr << endl << endl;
         

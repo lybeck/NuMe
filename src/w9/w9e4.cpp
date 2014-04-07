@@ -108,7 +108,8 @@ int main() {
     cout << "Excercise a:" << endl;
     cout << "x1 = " << x[0] << endl;
     cout << "x2 = " << x[1] << endl;
-    cout << "fa(x) = " << fa(x) << endl;
+    Vec_DP fax = fa(x);
+    cout << "norm(fa(x)) = " << vnormp(fax, 2.0) << endl << endl;
 
     Vec_DP xb(3);
     xb[0] = 3;
@@ -120,7 +121,8 @@ int main() {
     cout << "x1 = " << x[0] << endl;
     cout << "x2 = " << x[1] << endl;
     cout << "x3 = " << x[2] << endl;
-    cout << "fb(x) = " << fb(x) << endl;
+    Vec_DP fbx = fb(x);
+    cout << "norm(fb(x)) = " << vnormp(fbx, 2.0) << endl << endl;
 
     return 0;
 }

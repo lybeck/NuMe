@@ -40,44 +40,11 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/test/segfault.o \
 	${OBJECTDIR}/src/test/t1.o \
 	${OBJECTDIR}/src/test/testSurf.o \
-	${OBJECTDIR}/src/w1/w1e1.o \
-	${OBJECTDIR}/src/w1/w1e2.o \
-	${OBJECTDIR}/src/w1/w1e3.o \
-	${OBJECTDIR}/src/w1/w1e4.o \
-	${OBJECTDIR}/src/w1/w1e5.o \
-	${OBJECTDIR}/src/w1/w1e6.o \
-	${OBJECTDIR}/src/w2/w2e1-plot.o \
-	${OBJECTDIR}/src/w2/w2e1.o \
-	${OBJECTDIR}/src/w2/w2e2.o \
-	${OBJECTDIR}/src/w2/w2e3.o \
-	${OBJECTDIR}/src/w2/w2e4.o \
-	${OBJECTDIR}/src/w2/w2e5.o \
-	${OBJECTDIR}/src/w3/w3e1.o \
-	${OBJECTDIR}/src/w3/w3e2.o \
-	${OBJECTDIR}/src/w3/w3e3.o \
-	${OBJECTDIR}/src/w3/w3e4.o \
-	${OBJECTDIR}/src/w3/w3e5.o \
-	${OBJECTDIR}/src/w4/w4e1.o \
-	${OBJECTDIR}/src/w4/w4e2.o \
-	${OBJECTDIR}/src/w4/w4e4.o \
-	${OBJECTDIR}/src/w4/w4e5.o \
-	${OBJECTDIR}/src/w5/w5e1.o \
-	${OBJECTDIR}/src/w5/w5e2.o \
-	${OBJECTDIR}/src/w5/w5e3.o \
-	${OBJECTDIR}/src/w5/w5e4.o \
-	${OBJECTDIR}/src/w5/w5e5.o \
-	${OBJECTDIR}/src/w5/w5e6.o \
-	${OBJECTDIR}/src/w6/w6e1.o \
-	${OBJECTDIR}/src/w6/w6e2.o \
-	${OBJECTDIR}/src/w6/w6e3.o \
-	${OBJECTDIR}/src/w6/w6e4.o \
-	${OBJECTDIR}/src/w6/w6e5.o \
-	${OBJECTDIR}/src/w7/w7e1.o \
-	${OBJECTDIR}/src/w7/w7e5.o \
-	${OBJECTDIR}/src/w8/w8e1.o \
-	${OBJECTDIR}/src/w8/w8e5.o \
-	${OBJECTDIR}/src/w9/w9e1.o \
-	${OBJECTDIR}/src/w9/w9e4.o
+	${OBJECTDIR}/src/w11/w11e1.o \
+	${OBJECTDIR}/src/w11/w11e2.o \
+	${OBJECTDIR}/src/w11/w11e3.o \
+	${OBJECTDIR}/src/w11/w11e4.o \
+	${OBJECTDIR}/src/w11/w11e5.o
 
 
 # C Compiler Flags
@@ -129,195 +96,30 @@ ${OBJECTDIR}/src/test/testSurf.o: src/test/testSurf.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test/testSurf.o src/test/testSurf.cpp
 
-${OBJECTDIR}/src/w1/w1e1.o: src/w1/w1e1.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w1
+${OBJECTDIR}/src/w11/w11e1.o: src/w11/w11e1.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w11
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w1/w1e1.o src/w1/w1e1.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w11/w11e1.o src/w11/w11e1.cpp
 
-${OBJECTDIR}/src/w1/w1e2.o: src/w1/w1e2.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w1
+${OBJECTDIR}/src/w11/w11e2.o: src/w11/w11e2.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w11
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w1/w1e2.o src/w1/w1e2.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w11/w11e2.o src/w11/w11e2.cpp
 
-${OBJECTDIR}/src/w1/w1e3.o: src/w1/w1e3.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w1
+${OBJECTDIR}/src/w11/w11e3.o: src/w11/w11e3.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w11
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w1/w1e3.o src/w1/w1e3.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w11/w11e3.o src/w11/w11e3.cpp
 
-${OBJECTDIR}/src/w1/w1e4.o: src/w1/w1e4.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w1
+${OBJECTDIR}/src/w11/w11e4.o: src/w11/w11e4.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w11
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w1/w1e4.o src/w1/w1e4.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w11/w11e4.o src/w11/w11e4.cpp
 
-${OBJECTDIR}/src/w1/w1e5.o: src/w1/w1e5.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w1
+${OBJECTDIR}/src/w11/w11e5.o: src/w11/w11e5.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/w11
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w1/w1e5.o src/w1/w1e5.cpp
-
-${OBJECTDIR}/src/w1/w1e6.o: src/w1/w1e6.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w1
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w1/w1e6.o src/w1/w1e6.cpp
-
-${OBJECTDIR}/src/w2/w2e1-plot.o: src/w2/w2e1-plot.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w2
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e1-plot.o src/w2/w2e1-plot.cpp
-
-${OBJECTDIR}/src/w2/w2e1.o: src/w2/w2e1.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w2
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e1.o src/w2/w2e1.cpp
-
-${OBJECTDIR}/src/w2/w2e2.o: src/w2/w2e2.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w2
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e2.o src/w2/w2e2.cpp
-
-${OBJECTDIR}/src/w2/w2e3.o: src/w2/w2e3.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w2
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e3.o src/w2/w2e3.cpp
-
-${OBJECTDIR}/src/w2/w2e4.o: src/w2/w2e4.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w2
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e4.o src/w2/w2e4.cpp
-
-${OBJECTDIR}/src/w2/w2e5.o: src/w2/w2e5.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w2
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w2/w2e5.o src/w2/w2e5.cpp
-
-${OBJECTDIR}/src/w3/w3e1.o: src/w3/w3e1.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w3
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w3/w3e1.o src/w3/w3e1.cpp
-
-${OBJECTDIR}/src/w3/w3e2.o: src/w3/w3e2.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w3
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w3/w3e2.o src/w3/w3e2.cpp
-
-${OBJECTDIR}/src/w3/w3e3.o: src/w3/w3e3.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w3
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w3/w3e3.o src/w3/w3e3.cpp
-
-${OBJECTDIR}/src/w3/w3e4.o: src/w3/w3e4.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w3
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w3/w3e4.o src/w3/w3e4.cpp
-
-${OBJECTDIR}/src/w3/w3e5.o: src/w3/w3e5.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w3
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w3/w3e5.o src/w3/w3e5.cpp
-
-${OBJECTDIR}/src/w4/w4e1.o: src/w4/w4e1.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w4
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w4/w4e1.o src/w4/w4e1.cpp
-
-${OBJECTDIR}/src/w4/w4e2.o: src/w4/w4e2.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w4
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w4/w4e2.o src/w4/w4e2.cpp
-
-${OBJECTDIR}/src/w4/w4e4.o: src/w4/w4e4.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w4
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w4/w4e4.o src/w4/w4e4.cpp
-
-${OBJECTDIR}/src/w4/w4e5.o: src/w4/w4e5.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w4
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w4/w4e5.o src/w4/w4e5.cpp
-
-${OBJECTDIR}/src/w5/w5e1.o: src/w5/w5e1.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w5
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w5/w5e1.o src/w5/w5e1.cpp
-
-${OBJECTDIR}/src/w5/w5e2.o: src/w5/w5e2.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w5
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w5/w5e2.o src/w5/w5e2.cpp
-
-${OBJECTDIR}/src/w5/w5e3.o: src/w5/w5e3.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w5
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w5/w5e3.o src/w5/w5e3.cpp
-
-${OBJECTDIR}/src/w5/w5e4.o: src/w5/w5e4.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w5
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w5/w5e4.o src/w5/w5e4.cpp
-
-${OBJECTDIR}/src/w5/w5e5.o: src/w5/w5e5.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w5
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w5/w5e5.o src/w5/w5e5.cpp
-
-${OBJECTDIR}/src/w5/w5e6.o: src/w5/w5e6.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w5
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w5/w5e6.o src/w5/w5e6.cpp
-
-${OBJECTDIR}/src/w6/w6e1.o: src/w6/w6e1.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w6
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w6/w6e1.o src/w6/w6e1.cpp
-
-${OBJECTDIR}/src/w6/w6e2.o: src/w6/w6e2.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w6
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w6/w6e2.o src/w6/w6e2.cpp
-
-${OBJECTDIR}/src/w6/w6e3.o: src/w6/w6e3.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w6
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w6/w6e3.o src/w6/w6e3.cpp
-
-${OBJECTDIR}/src/w6/w6e4.o: src/w6/w6e4.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w6
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w6/w6e4.o src/w6/w6e4.cpp
-
-${OBJECTDIR}/src/w6/w6e5.o: src/w6/w6e5.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w6
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w6/w6e5.o src/w6/w6e5.cpp
-
-${OBJECTDIR}/src/w7/w7e1.o: src/w7/w7e1.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w7
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w7/w7e1.o src/w7/w7e1.cpp
-
-${OBJECTDIR}/src/w7/w7e5.o: src/w7/w7e5.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w7
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w7/w7e5.o src/w7/w7e5.cpp
-
-${OBJECTDIR}/src/w8/w8e1.o: src/w8/w8e1.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w8
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w8/w8e1.o src/w8/w8e1.cpp
-
-${OBJECTDIR}/src/w8/w8e5.o: src/w8/w8e5.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w8
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w8/w8e5.o src/w8/w8e5.cpp
-
-${OBJECTDIR}/src/w9/w9e1.o: src/w9/w9e1.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w9
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w9/w9e1.o src/w9/w9e1.cpp
-
-${OBJECTDIR}/src/w9/w9e4.o: src/w9/w9e4.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/w9
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w9/w9e4.o src/w9/w9e4.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/w11/w11e5.o src/w11/w11e5.cpp
 
 # Subprojects
 .build-subprojects:
